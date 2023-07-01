@@ -28,6 +28,11 @@ namespace BusinessLayer.Concrete
             return _headingDal.GetAll();
         }
 
+        public List<Heading> GetHeadingsByWriter()
+        {
+            return _headingDal.GetFind(x => x.WriterID == 1);
+        }
+
         public void HeadingActive(Heading heading)
         {
             _headingDal.Update(heading);
